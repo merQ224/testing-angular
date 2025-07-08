@@ -1,0 +1,17 @@
+ion-card {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.selected-drink {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+
+  ion-icon {
+    margin-right: 8px;
+    color: var(--ion-color-primary, #3880ff);
+    font-size: 1.5em;
+  }
+}
