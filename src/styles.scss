@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.popover-select-width {
+  --width: 366px !important;
+  --min-width: unset !important;
+  --max-width: unset !important;
+
+  .select-interface-option {
+    position: relative;
+    padding-left: 24px !important;
+  }
+
+  .select-interface-option:hover::before {
+    content: '\2713'; /* Unicode checkmark */
+    position: absolute;
+    left: 8px;
+    color: var(--ion-color-primary, #3880ff);
+    font-size: 1.2em;
+  }
+}

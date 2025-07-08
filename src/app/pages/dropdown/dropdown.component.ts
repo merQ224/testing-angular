@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -35,7 +35,7 @@ import {
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent {
-  drinks = [
+  drinks: string[] = [
     'Coke', 'Pepsi', 'Sprite', 'Fanta', 'Water',
     'Juice', 'Tea', 'Coffee', 'Milk', 'Lemonade'
   ];

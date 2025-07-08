@@ -7,12 +7,26 @@
       <form>
         <ion-item>
           <ion-label position="stacked">Drink</ion-label>
-          <ion-select [(ngModel)]="selectedDrink" name="drink" interface="popover" placeholder="Select one">
+          <ion-select
+            #select
+            aria-label="Drink Selection"
+            [(ngModel)]="selectedDrink"
+            name="drink"
+            interface="popover"
+            placeholder="Select one"
+            [interfaceOptions]="{
+              side: 'bottom',
+              alignment: 'start',
+              reference: 'trigger',
+              cssClass: 'popover-select-width'
+            }"
+          >
             <ion-select-option *ngFor="let drink of drinks" [value]="drink">
               {{ drink }}
             </ion-select-option>
           </ion-select>
         </ion-item>
+
         <div *ngIf="selectedDrink" class="selected-drink">
           <ion-icon name="cafe-outline"></ion-icon>
           <span>You selected: <strong>{{ selectedDrink }}</strong></span>
