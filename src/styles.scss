@@ -1,19 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 .popover-select-width {
-  --width: 366px !important;
+  --width: 336px !important;
   --min-width: unset !important;
   --max-width: unset !important;
 
   .select-interface-option {
     position: relative;
-    padding-left: 24px !important;
-  }
+    padding-left: 2rem; // makes room for the icon
 
-  .select-interface-option:hover::before {
-    content: '\2713'; /* Unicode checkmark */
-    position: absolute;
-    left: 8px;
-    color: var(--ion-color-primary, #3880ff);
-    font-size: 1.2em;
+    &:hover {
+      background-color: #f4f5f8; // hover color for full row
+    }
+
+    &::before {
+      content: '\1F5F8';
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      color: #000;
+    }
   }
 }
