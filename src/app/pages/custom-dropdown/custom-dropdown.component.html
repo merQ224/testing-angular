@@ -30,22 +30,22 @@
     [attr.aria-labelledby]="'custom-options-label'"
   >
     <div
-      *ngFor="let option of options; let i = index"
+      *ngFor="let city of cities; let i = index"
       role="option"
-      [attr.id]="'option-' + i"
-      [attr.aria-selected]="option.id === selectedId"
+      [attr.id]="'city-' + i"
+      [attr.aria-selected]="city.id === selectedId"
       class="dropdown-option"
-      [class.selected]="option.id === selectedId"
+      [class.selected]="city.id === selectedId"
       [class.focused]="i === focusedIndex"
       [class.hovered]="i === hoveredIndex"
       [attr.tabindex]="i === focusedIndex ? 0 : -1"
-      (click)="selectOption(option.id)"
+      (click)="selectOption(city.id)"
       (keydown)="handleOptionKeyDown($event, i)"
       (mouseenter)="hoveredIndex = i"
       (mouseleave)="hoveredIndex = null"
     >
       <span class="checkmark">{{ i === hoveredIndex ? '\u2713' : '' }}</span>
-      <span>{{ option.name }}</span>
+      <span>{{ city.name }}</span>
     </div>
   </div>
 </div>

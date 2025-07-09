@@ -1,6 +1,5 @@
 import {
   Component,
-  Input,
   ElementRef,
   HostListener,
   forwardRef
@@ -12,6 +11,7 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CITIES_LIST } from '../../defn/citiesList';
 
 
 @Component({
@@ -27,19 +27,8 @@ import { CommonModule } from '@angular/common';
   }]
 })
 export class CustomDropdownComponent implements ControlValueAccessor {
-  @Input() options: { id: any, name: string }[] = [
-    { id: 1, name: 'Option 1' },
-    { id: 2, name: 'Option 2' },
-    { id: 3, name: 'Option 3' },
-    { id: 4, name: 'Option 4' },
-    { id: 5, name: 'Option 5' },
-    { id: 6, name: 'Option 6' },
-    { id: 7, name: 'Option 7' },
-    { id: 8, name: 'Option 8' },
-    { id: 9, name: 'Option 9' },
-    { id: 10, name: 'Option 10' }
-  ];
-  @Input() placeholder = 'Select an option';
+  cities = CITIES_LIST;
+  placeholder = 'Select an option';
 
   isOpen = false;
   selectedId: any = null;
@@ -52,14 +41,14 @@ export class CustomDropdownComponent implements ControlValueAccessor {
   constructor(private readonly elRef: ElementRef) {}
 
   get selectedLabel(): string {
-    const selected = this.options.find(o => o.id === this.selectedId);
+    const selected = this.cities.find(o => o.id === this.selectedId);
     return selected?.name || this.placeholder;
   }
 
 
   writeValue(value: any): void {
     this.selectedId = value;
-    this.focusedIndex = this.options.findIndex(o => o.id === value);
+    this.focusedIndex = this.cities.findIndex(o => o.id === value);
   }
 
   registerOnChange(fn: any): void {
@@ -88,13 +77,13 @@ export class CustomDropdownComponent implements ControlValueAccessor {
       event.preventDefault();
     } else if (this.isOpen) {
       if (event.key === 'ArrowDown') {
-        this.focusedIndex = (this.focusedIndex + 1) % this.options.length;
+        this.focusedIndex = (this.focusedIndex + 1) % this.cities.length;
         event.preventDefault();
       } else if (event.key === 'ArrowUp') {
-        this.focusedIndex = (this.focusedIndex - 1 + this.options.length) % this.options.length;
+        this.focusedIndex = (this.focusedIndex - 1 + this.cities.length) % this.cities.length;
         event.preventDefault();
       } else if (event.key === 'Enter') {
-        const selected = this.options[this.focusedIndex];
+        const selected = this.cities[this.focusedIndex];
         this.selectOption(selected.id);
         event.preventDefault();
       } else if (event.key === 'Escape') {
@@ -106,17 +95,17 @@ export class CustomDropdownComponent implements ControlValueAccessor {
 
   handleOptionKeyDown(event: KeyboardEvent, i: number): void {
     if (event.key === 'ArrowDown') {
-      const next = (i + 1) % this.options.length;
+      const next = (i + 1) % this.cities.length;
       this.focusedIndex = next;
       this.focusOption(next);
       event.preventDefault();
     } else if (event.key === 'ArrowUp') {
-      const prev = (i - 1 + this.options.length) % this.options.length;
+      const prev = (i - 1 + this.cities.length) % this.cities.length;
       this.focusedIndex = prev;
       this.focusOption(prev);
       event.preventDefault();
     } else if (event.key === 'Enter' || event.key === ' ') {
-      this.selectOption(this.options[i].id);
+      this.selectOption(this.cities[i].id);
       event.preventDefault();
     } else if (event.key === 'Escape') {
       this.isOpen = false;
