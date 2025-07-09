@@ -1,1 +1,51 @@
-<p>custom-dropdown works!</p>
+<!-- sonarignore: Custom-styled listbox is accessible via aria -->
+
+<div
+  class="custom-select"
+  [class.open]="isOpen"
+  role="combobox"
+  aria-haspopup="listbox"
+  [attr.aria-controls]="'custom-options-list'"
+  [attr.aria-expanded]="isOpen"
+  [attr.aria-activedescendant]="isOpen ? 'option-' + focusedIndex : null"
+>
+  <button
+    class="selected-value"
+    type="button"
+    (click)="toggleDropdown()"
+    (keydown)="handleKeyDown($event)"
+    aria-label="Select an option"
+    aria-haspopup="listbox"
+    [attr.aria-expanded]="isOpen"
+    [attr.aria-controls]="'custom-options-list'"
+  >
+    {{ selectedLabel }}
+  </button>
+
+  <div
+    *ngIf="isOpen"
+    id="custom-options-list"
+    class="dropdown"
+    role="listbox"
+    [attr.aria-labelledby]="'custom-options-label'"
+  >
+    <div
+      *ngFor="let option of options; let i = index"
+      role="option"
+      [attr.id]="'option-' + i"
+      [attr.aria-selected]="option.id === selectedId"
+      class="dropdown-option"
+      [class.selected]="option.id === selectedId"
+      [class.focused]="i === focusedIndex"
+      [class.hovered]="i === hoveredIndex"
+      [attr.tabindex]="i === focusedIndex ? 0 : -1"
+      (click)="selectOption(option.id)"
+      (keydown)="handleOptionKeyDown($event, i)"
+      (mouseenter)="hoveredIndex = i"
+      (mouseleave)="hoveredIndex = null"
+    >
+      <span class="checkmark">{{ i === hoveredIndex ? '\u2713' : '' }}</span>
+      <span>{{ option.name }}</span>
+    </div>
+  </div>
+</div>
