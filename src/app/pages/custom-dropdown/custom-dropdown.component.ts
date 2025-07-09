@@ -8,16 +8,16 @@ import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CITIES_LIST } from '../../defn/citiesList';
-
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-custom-dropdown',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [IonCardTitle, IonCardHeader, IonCard, CommonModule, FormsModule, ReactiveFormsModule, IonCardContent],
   templateUrl: './custom-dropdown.component.html',
   styleUrl: './custom-dropdown.component.scss',
   providers: [{
