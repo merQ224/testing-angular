@@ -30,3 +30,55 @@
     }
   }
 }
+
+.popover-select-smooth {
+  --width: 336px !important;
+  --min-width: unset !important;
+  --max-width: unset !important;
+
+  /* Style the ion-select trigger box */
+  ion-select {
+    border-radius: 25px 25px 0 0; /* Rounded top corners only */
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    /* optional: add background color */
+    background-color: #fff;
+  }
+
+  /* Style the popover container */
+  ion-popover {
+    border-radius: 0 0 25px 25px; /* Rounded bottom corners only */
+    border: 1px solid #000;
+    border-top: none; /* So it visually connects with ion-select */
+    margin-top: -1px; /* Slightly overlap popover border with select */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style individual options */
+  .select-interface-option {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+      content: '\1F5F8';
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      color: #000;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: #f4f5f8;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
