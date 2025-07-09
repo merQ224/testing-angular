@@ -6,11 +6,7 @@
 
   .select-interface-option {
     position: relative;
-    padding-left: 2rem; // makes room for the icon
-
-    &:hover {
-      background-color: #f4f5f8; // hover color for full row
-    }
+    padding-left: 2rem;
 
     &::before {
       content: '\1F5F8';
@@ -20,6 +16,17 @@
       transform: translateY(-50%);
       font-size: 1.2em;
       color: #000;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: #f4f5f8;
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }
