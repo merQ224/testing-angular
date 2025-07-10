@@ -114,11 +114,10 @@ export class CustomDropdownComponent implements ControlValueAccessor {
   }
 
   private focusOption(index: number): void {
-    // Focus the option element in the DOM
     setTimeout(() => {
-      const option = this.elRef.nativeElement.querySelector(`#option-${index}`);
-      if (option) {
-        option.focus();
+      const cityOption = this.elRef.nativeElement.querySelector(`#city-${index}`);
+      if (cityOption) {
+        cityOption.focus();
       }
     });
   }

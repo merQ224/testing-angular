@@ -11,7 +11,7 @@
           aria-haspopup="listbox"
           [attr.aria-controls]="'custom-options-list'"
           [attr.aria-expanded]="isOpen"
-          [attr.aria-activedescendant]="isOpen ? 'option-' + focusedIndex : null"
+          [attr.aria-activedescendant]="isOpen ? 'city-' + focusedIndex : null"
         >
           <button
             class="selected-value"
@@ -37,7 +37,7 @@
               *ngFor="let city of cities; let i = index"
               role="option"
               [attr.id]="'city-' + i"
-              [attr.aria-selected]="city.id === selectedId"
+              [attr.aria-selected]="city.id === selectedId ? 'true' : 'false'"
               class="dropdown-option"
               [class.selected]="city.id === selectedId"
               [class.focused]="i === focusedIndex"
