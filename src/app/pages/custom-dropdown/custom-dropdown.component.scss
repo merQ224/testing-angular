@@ -57,6 +57,7 @@ ion-card {
         gap: 0.5rem;
         cursor: pointer;
         border-radius: 0;
+        border-bottom: 1px solid black;
 
         .checkmark {
             color: #4a90e2;
@@ -79,9 +80,14 @@ ion-card {
         }
     }
 
+    .dropdown-option:first-child {
+        border-top: 1px solid black;
+    }
+
     .dropdown-option:last-child {
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
+        border-bottom: none;
     }
 
     // This removes the border radius on the bottom when the dropdown is open

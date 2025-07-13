@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
-This project is to test designs
+This project is to test designs, web components, anything I want to trial and test behaviour.
 
 ## Development server
 
