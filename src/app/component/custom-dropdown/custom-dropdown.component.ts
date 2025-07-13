@@ -12,12 +12,12 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CITIES_LIST } from '../../defn/citiesList';
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from "@ionic/angular/standalone";
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonContent } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-custom-dropdown',
   standalone: true,
-  imports: [IonCardTitle, IonCardHeader, IonCard, CommonModule, FormsModule, ReactiveFormsModule, IonCardContent],
+  imports: [IonCardTitle, IonCardHeader, IonCard, CommonModule, FormsModule, ReactiveFormsModule, IonCardContent, IonContent],
   templateUrl: './custom-dropdown.component.html',
   styleUrl: './custom-dropdown.component.scss',
   providers: [{

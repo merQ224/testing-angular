@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomSelectSmoothPopoverComponent } from './custom-select-smooth-popover.component';
+import { IonicDropdownCustomComponent } from './ionic-dropdown-custom.component';
 
 describe('CustomSelectSmoothPopoverComponent', () => {
-  let component: CustomSelectSmoothPopoverComponent;
-  let fixture: ComponentFixture<CustomSelectSmoothPopoverComponent>;
+  let component: IonicDropdownCustomComponent;
+  let fixture: ComponentFixture<IonicDropdownCustomComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CustomSelectSmoothPopoverComponent]
+      imports: [IonicDropdownCustomComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CustomSelectSmoothPopoverComponent);
+    fixture = TestBed.createComponent(IonicDropdownCustomComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

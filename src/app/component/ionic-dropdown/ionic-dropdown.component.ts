@@ -16,7 +16,7 @@ import {
 import { drinksList } from '../../defn/drinkList';
 
 @Component({
-  selector: 'app-custom-select-smooth-popover',
+  selector: 'app-dropdown',
   standalone: true,
   imports: [
     CommonModule,
@@ -32,10 +32,10 @@ import { drinksList } from '../../defn/drinkList';
     IonCardContent,
     IonIcon
   ],
-  templateUrl: './custom-select-smooth-popover.component.html',
-  styleUrl: './custom-select-smooth-popover.component.scss'
+  templateUrl: '../../component/ionic-dropdown/ionic-dropdown.component.html',
+  styleUrls: ['../../component/ionic-dropdown/ionic-dropdown.component.scss']
 })
-export class CustomSelectSmoothPopoverComponent {
+export class IonicDropdownComponent {
   drinks: string [] = drinksList
   selectedDrink: string | null = null;
 }
