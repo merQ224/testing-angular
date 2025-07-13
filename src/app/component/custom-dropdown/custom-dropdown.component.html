@@ -25,6 +25,12 @@
                [attr.aria-controls]="'custom-options-list'"
              >
                {{ selectedLabel }}
+               <ion-icon
+                 name="chevron-down-outline"
+                 class="chevron"
+                 [class.open]="isOpen"
+                 aria-hidden="true"
+               ></ion-icon>
              </button>
    
              <div

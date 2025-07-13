@@ -37,6 +37,22 @@ ion-card {
         text-overflow: ellipsis;
         background-color: transparent;
         font-size: 16px;
+        position: relative;
+
+        .chevron {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            font-size: 1.2rem;
+            color: #888;
+            background: none;
+            transition: transform 0.2s ease;
+            pointer-events: none;
+        }
+        .chevron.open {
+            transform: translateY(-50%) rotate(180deg);
+        }
     }
 
     .dropdown {
