@@ -48,7 +48,7 @@
               (mouseenter)="hoveredIndex = i"
               (mouseleave)="hoveredIndex = null"
             >
-              <span class="checkmark">{{ i === hoveredIndex ? '\u2713' : '' }}</span>
+              <span class="checkmark">{{ city.id === selectedId || i === hoveredIndex ? '\u2713' : '' }}</span>
               <span>{{ city.name }}</span>
             </div>
           </div>

@@ -66,13 +66,16 @@ ion-card {
             visibility: hidden;
         }
 
-        // Only shows the checkmark when the option is hovered or selected
-        &.hovered .checkmark {
+        &.hovered .checkmark,
+        &.selected .checkmark {
             visibility: visible;
         }
         &:hover,
         &.hovered {
             background-color: #f1f1f1;
+        }
+        &.selected {
+            background-color: #e0e0e0; // Light gray background for selected item
         }
     }
 
