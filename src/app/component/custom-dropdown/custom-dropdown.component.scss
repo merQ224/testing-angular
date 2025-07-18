@@ -106,7 +106,6 @@ ion-card {
         border-bottom: none;
     }
 
-    // This removes the border radius on the bottom when the dropdown is open
     &.open {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
